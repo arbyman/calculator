@@ -24,7 +24,9 @@ public class Main {
         final int result = calculator.calculate(intA, intB, operator);
         if (isRomanExpression) {
             RomanConverter rc = new RomanConverter();
-            System.out.printf("Result is %s", rc.convert(result));
+            String converted = rc.convert(Math.abs(result));
+            String sign = result < 0 ? "-" : "";
+            System.out.printf("Result is %s%s", sign, converted);
         } else {
             System.out.printf("Result is %d", result);
         }
